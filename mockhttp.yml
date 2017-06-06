@@ -1,0 +1,7 @@
+/hello:
+  status: 200
+  delay: 200ms
+  body: '{"status":"OK"}'
+/world:
+  status: 404
+  delay: 1s

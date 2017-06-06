@@ -35,8 +35,10 @@ func main() {
 	for k, route := range ymlCfg {
 		log.Println(k, route)
 		http.HandleFunc(k, func(w http.ResponseWriter, r *http.Request) {
-			v, ok := ymlCfg[r.URL.String()]
+
+			v, ok := ymlCfg[r.URL.Path]
 			if !ok {
+				log.Println("No route found", r.URL.Path)
 				w.WriteHeader(404)
 				return
 			}

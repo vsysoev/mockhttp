@@ -1,3 +1,16 @@
+// mockhttp provides simple http server with predefined behavior for
+// testing purpose.
+//
+// Behavior is defined in yml config file.
+// Sample of yml config is:
+//
+// /hello:                           // entrypoint
+//   status: 200                     // status code
+//   delay: 200ms                    // delay in time.Duration
+//   body: '{"status":"OK"}'         // body as string
+// /world:
+//   status: 404
+//   delay: 1s
 package main
 
 import (
